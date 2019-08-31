@@ -12,6 +12,10 @@ def button_callback(channel):
 
 GPIO.add_event_detect(10,GPIO.RISING,callback=button_callback)
 
+message = input("Press enter to quit\n\n") # Run until someone presses enter
+
+GPIO.cleanup() # Clean up
+
 # non event-based
 # while True: # Run forever
 #    if GPIO.input(10) == GPIO.HIGH:
