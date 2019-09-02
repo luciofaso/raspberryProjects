@@ -12,12 +12,14 @@ GPIO.setup(8, GPIO.OUT, initial=GPIO.LOW)
 def launch_sos():
     morse = {"s":"...","o":"---", " ":" "}
     leng = {"-":1,".":0.2," ":0.0}
-    for letter in "s o s":
-        for sign in morse[letter]:
-            GPIO.output(8, GPIO.HIGH)  # Turn on
-            sleep(leng[sign])
-            GPIO.output(8, GPIO.LOW)
-            sleep(0.2)
+    while True:
+        for letter in "s o s":
+            for sign in morse[letter]:
+                GPIO.output(8, GPIO.HIGH)  # Turn on
+                sleep(leng[sign])
+                GPIO.output(8, GPIO.LOW)
+                sleep(0.2)
+        sleep(1)
 
 def button_callback(channel):
     print("Button was pushed! SOS launched!")
