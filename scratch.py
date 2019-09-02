@@ -13,7 +13,7 @@ def launch_sos():
     morse = {"s":"---","o":"...", " ":" "}
     leng = {"-":1,".":0.2," ":0.0}
     for letter in "s o s":
-        for sign in letter:
+        for sign in morse[letter]:
             GPIO.output(8, GPIO.HIGH)  # Turn on
             sleep(leng[sign])
             GPIO.output(8, GPIO.LOW)
