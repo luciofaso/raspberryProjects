@@ -19,13 +19,13 @@ def launch_sos():
             GPIO.output(8, GPIO.LOW)
             sleep(0.2)
 
-print("system has started...")
-
-
 def button_callback(channel):
     print("Button was pushed! SOS launched!")
-        launch_sos()
+    launch_sos()
 
+
+
+print("system has started...")
 
 GPIO.add_event_detect(7,GPIO.RISING,callback=button_callback)
 
